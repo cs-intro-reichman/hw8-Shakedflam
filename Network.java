@@ -103,8 +103,11 @@ public class Network {
      *  The user who appears the most in the follow lists of all the users. */
     public String mostPopularUser() {
         //// Replace the following statement with your code
-        int userIndex=0;
-        int countFollows=0;
+        int userIndex=-1;
+        int countFollows=-1;
+        if (userCount==0){
+            return null;
+        }
         for (int i = 0; i < userCount; i++) {
             int followers = followeeCount(users[i].getName());
             if (followers>countFollows){
@@ -131,9 +134,10 @@ public class Network {
     public String toString() {
        //// Replace the following statement with your code
        String str= "Network:\n";
-       for (int i = 0; i < userCount; i++) {
+       for (int i = 0; i < userCount-1; i++) {
            str += users[i].toString() + "\n";
        }
+       str += users[userCount-1];
        return str;
     }
 }
