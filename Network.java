@@ -67,6 +67,9 @@ public class Network {
             return false;
         }
         User user1= getUser(name1);
+        if (user1.follows(name2)){
+            return false;
+        }
         user1.addFollowee(name2);
         return true;
     }
@@ -100,8 +103,8 @@ public class Network {
      *  The user who appears the most in the follow lists of all the users. */
     public String mostPopularUser() {
         //// Replace the following statement with your code
-        int userIndex=-1;
-        int countFollows=-1;
+        int userIndex=0;
+        int countFollows=0;
         for (int i = 0; i < userCount; i++) {
             int followers = followeeCount(users[i].getName());
             if (followers>countFollows){
