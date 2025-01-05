@@ -56,7 +56,7 @@
         if (this.follows(name)){
             return false;
         }
-        for (int i = 0; i < follows.length; i++) {
+        for (int i = 0; i < fCount; i++) {
             if (follows[i]==null){
                 follows[i] = name;
                 fCount++;
