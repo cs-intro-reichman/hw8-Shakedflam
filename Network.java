@@ -21,6 +21,9 @@ public class Network {
         users[2] = new User("Baz");
         userCount = 3;
     }
+    public int getUserCount(){
+        return this.userCount;
+    }
 
     /** Finds in this network, and returns, the user that has the given name.
      *  If there is no such user, returns null.
@@ -32,10 +35,6 @@ public class Network {
             }
         }
         return null;
-    }
-
-    public int getUserCount(){
-        return this.userCount;
     }
 
     /** Adds a new user with the given name to this network.
